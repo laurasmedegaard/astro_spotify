@@ -1,0 +1,59 @@
+---
+const header = Astro.props.header;
+const imgPath = Astro.props.imgPath;
+const { newBadge } = Astro.props;
+---
+
+<article class="Categorycard">
+  <img class="cover" src={imgPath} alt="" />
+  {newBadge && <p class="badge colorbox ">NEW</p>}
+  <h2>{header}</h2>
+</article>
+<!-- <slot /> -->
+
+<style>
+  article {
+    display: grid;
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+  }
+  article > * {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  img,
+  .badge {
+    justify-self: end;
+  }
+  img {
+    align-self: end;
+  }
+  /* .colorbox {
+    background-color: blueviolet;
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 5%;
+  } */
+  h2 {
+    font-size: 18px;
+    font-family: roboto;
+    margin-top: 20px;
+  }
+
+  img {
+    scale: 0.7;
+  }
+
+  p {
+    /* background-color: black; */
+    color: black;
+  }
+
+  /* .newbox {
+    background-color: beige;
+    width: 70px;
+    border-radius: 8%;
+  } */
+</style>
